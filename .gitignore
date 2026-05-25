@@ -29,6 +29,7 @@ node_modules
 Thumbs.db
 
 # misc
+.angular
 .env
 .nx/cache
 .nx/workspace-data
