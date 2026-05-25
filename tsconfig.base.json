@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "rootDir": ".",
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "esModuleInterop": true,
@@ -35,7 +36,8 @@
     "paths": {
       "rollinia": ["./packages/cli/src/index.ts"],
       "@rollinia/utils": ["./packages/utils/src/index.ts"],
-      "@rollinia/ui": ["./packages/ui/src/index.ts"]
+      "@rollinia/ui": ["./packages/ui/src/index.ts"],
+      "@lineup/api": ["./libs/api/src/index.ts"]
     }
   }
 }

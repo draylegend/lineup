@@ -1,13 +1,5 @@
-import { Type } from '@sinclair/typebox';
-import { Value } from '@sinclair/typebox/value';
+import { env } from '@lineup/api';
 import { Elysia } from 'elysia';
-
-const env = Value.Parse(
-  Type.Object({
-    PORT: Type.Optional(Type.String()),
-  }),
-  Bun.env,
-);
 
 new Elysia()
   .get('/health', () => ({ ok: true }))
