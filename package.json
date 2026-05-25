@@ -15,7 +15,8 @@
   },
   "type": "module",
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "db:sync": "docker compose run --rm surrealkit"
   },
   "private": true,
   "dependencies": {
