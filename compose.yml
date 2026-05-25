@@ -18,7 +18,8 @@ services:
       surrealdb:
         condition: service_healthy
     volumes:
-      - ./database:/database:ro
+      - .:/project:ro
+    working_dir: /project
     command:
       - --host=http://surrealdb:8000
       - --ns=${SURREAL_NS}
