@@ -1,0 +1,31 @@
+services:
+  surrealdb:
+    image: surrealdb/surrealdb:v3.1.0-beta.3-dev
+    command: start --user ${SURREAL_USER} --pass ${SURREAL_PASS} rocksdb:/data/db
+    ports:
+      - '8000:8000'
+    volumes:
+      - database:/data
+    healthcheck:
+      test: ['CMD', '/surreal', 'is-ready']
+      interval: 1s
+      timeout: 5s
+      retries: 30
+
+  surrealkit:
+    image: ghcr.io/surrealdb/surrealkit
+    depends_on:
+      surrealdb:
+        condition: service_healthy
+    volumes:
+      - ./database:/database:ro
+    command:
+      - --host=http://surrealdb:8000
+      - --ns=${SURREAL_NS}
+      - --db=${SURREAL_DB}
+      - --user=${SURREAL_USER}
+      - --pass=${SURREAL_PASS}
+      - sync
+
+volumes:
+  database:
