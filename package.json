@@ -1,0 +1,29 @@
+{
+  "name": "@lineup/source",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Vladimir Drayling",
+    "url": "https://github.com/draylegend"
+  },
+  "repository": {
+    "url": "https://github.com/draylegend/lineup.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/draylegend/lineup/issues"
+  },
+  "scripts": {
+    "prepare": "husky"
+  },
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "21.0.1",
+    "@commitlint/config-conventional": "21.0.1",
+    "@nx/workspace": "22.7.3",
+    "husky": "9.1.7",
+    "nx": "22.7.3",
+    "prettier": "4.0.0-alpha.13"
+  }
+}
