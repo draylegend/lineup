@@ -40,7 +40,7 @@ export default [
         {
           groups: [
             ['^@?\\w'], // External packages
-            ['^@finflow'], // Workspace libs
+            ['^@lineup'], // Workspace libs
             ['^\\.'], // Relative imports
           ],
         },

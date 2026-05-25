@@ -1,5 +1,6 @@
-import { env } from '@lineup/api';
 import { Elysia } from 'elysia';
+
+import { env } from '@lineup/api';
 
 new Elysia()
   .get('/health', () => ({ ok: true }))
