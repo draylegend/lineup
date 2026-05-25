@@ -1,0 +1,39 @@
+{
+  "name": "api",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/api/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{workspaceRoot}/dist/apps/api"],
+      "configurations": {
+        "production": {
+          "command": "bun build --target=bun --minify --outdir=dist/apps/api apps/api/src/main.ts"
+        },
+        "development": {
+          "command": "bun build --target=bun --sourcemap=inline --outdir=dist/apps/api apps/api/src/main.ts"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "nx:run-commands",
+      "configurations": {
+        "production": {
+          "command": "bun run dist/apps/api/main.js",
+          "dependsOn": ["build"]
+        },
+        "development": {
+          "command": "bun run --watch apps/api/src/main.ts"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
