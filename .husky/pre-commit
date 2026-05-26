@@ -1,3 +1,4 @@
 bunx nx format
-bunx nx run-many -t lint build
+bunx nx run-many -t lint --fix
+bunx nx run-many -t build
 git add -u
