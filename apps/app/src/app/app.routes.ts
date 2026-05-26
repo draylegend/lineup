@@ -1,3 +1,8 @@
 import { type Routes } from '@angular/router';
 
-export const appRoutes: Routes = [];
+import { auth } from '@lineup/auth/feature';
+
+export const appRoutes: Routes = [
+  auth,
+  { path: '**', redirectTo: auth.path ?? '' },
+];

@@ -32,13 +32,11 @@
     "target": "ES2024",
     "useDefineForClassFields": true,
     "verbatimModuleSyntax": true,
-    "customConditions": ["@rollinia/source"],
+    "customConditions": ["@lineup/source"],
     "paths": {
-      "rollinia": ["./packages/cli/src/index.ts"],
-      "@rollinia/utils": ["./packages/utils/src/index.ts"],
-      "@rollinia/ui": ["./packages/ui/src/index.ts"],
       "@lineup/api": ["./libs/api/src/index.ts"],
-      "@lineup/auth/api": ["./libs/auth/api/src/index.ts"]
+      "@lineup/auth/api": ["./libs/auth/api/src/index.ts"],
+      "@lineup/auth/feature": ["./libs/auth/feature/src/index.ts"]
     }
   }
 }
